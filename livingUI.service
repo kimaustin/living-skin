@@ -1,0 +1,9 @@
+[Unit]
+Description=Living Skin site service
+
+[Service]
+WorkingDirectory=/home/portfolio/living-skin
+ExecStart=/usr/local/bin/serve -s build -l 6161
+
+[Install]
+WantedBy=multi-user.target
