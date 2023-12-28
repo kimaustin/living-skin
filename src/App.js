@@ -16,6 +16,8 @@ import Space from './Components/Space';
 import Events from './Components/Events';
 import Archive from './Components/Archive';
 import Close from './Components/Close';
+import { BackgroundDissolve } from './Components/BackgroundDissolve';
+import QuickNav from './Components/QuickNav';
 
 function App() {
 
@@ -97,6 +99,7 @@ function App() {
       {/* <Contact showContact={contact} /> */}
       {/* <Manifesto showManifesto={manifesto} /> */}
       {/* <PPAFTE /> */}
+      <BackgroundDissolve />
       <Home 
           aboutToggle={toggleAbout} 
           showAbout={about} 
@@ -112,6 +115,7 @@ function App() {
           showArchive={archive}
           closePortals={closePortals}
       />
+      {/* <QuickNav/> */}
       <Routes>
         <Route path="/" element={<div />} />
         <Route path="/manifesto" element={<Manifesto showManifesto={manifesto} manifestoToggle={toggleManifesto} />} />

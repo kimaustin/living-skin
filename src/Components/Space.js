@@ -9,11 +9,11 @@ const Space = ({ showSpace }) => {
             <p style={{ marginTop: "0", marginBottom: "-10px" }} >more pctures and highlights can be found on our instagram</p>
             <p><a href="https://instagram.com/living_skin_space">@Living_Skin_Space</a></p>
             <br />
+            <img src={"imgs/space1.jpeg"} />
             <img src={"imgs/space5.jpeg"} />
             <img src={"imgs/space.jpeg"} />
             <img src={"imgs/space2.jpeg"} />
             <img src={"imgs/space3.jpeg"} />
-            <img src={"imgs/space1.jpeg"} />
             <img src={"imgs/space4.jpeg"} />
         </Container>
     );

@@ -59,6 +59,11 @@ const Archive = ({ showArchive }) => {
                                     <Title><b>Film Series, Seasonal Emotion (1/4): </b> A Tale of Winter, 1992</Title>
                                     <p>December 9, 2023</p>
                                     <LinkRouter to="https://letterboxd.com/livingskin/list/film-screenings/detail/" target="blank" ><p>our notes...</p></LinkRouter>
+                                    <ImageContainer>
+                                        <img src={"imgs/film/1_1.jpg"}/>
+                                        <img src={"imgs/film/1_2.jpg"}/>
+                                        <img src={"imgs/film/1_3.jpg"}/>
+                                    </ImageContainer>
                                 </Details>
                             </Content>
                         ) : (
@@ -69,8 +74,23 @@ const Archive = ({ showArchive }) => {
                                         <p><i>History of Soup Clinincs</i></p>
                                     </Info>
                                     <Details>
-                                        <Title><b>#1:</b> Korean Stew (TBD)</Title>
+                                        <Title><b>#1:</b> 육개장 (yukgaejang)</Title>
                                         <p>December 18, 2023, 6 - 8:30pm</p>
+                                        <LinkRouter to="https://drive.google.com/file/d/1YjtUSdQiVusZbIUYPDBgKuyxdb4V5tNY/view?usp=sharing" target="blank" ><p>history-and-how-to zine</p></LinkRouter>
+                                        <ImageContainer>
+                                            <img src={"imgs/soup/1_1.jpg"}/>
+                                            <img src={"imgs/soup/1_2.jpg"}/>
+                                            <img src={"imgs/soup/1_3.jpg"}/>
+                                            <img src={"imgs/soup/1_4.jpg"}/>
+                                            <img src={"imgs/soup/1_5.jpg"}/>
+                                            <img src={"imgs/soup/1_11.jpg"}/>
+                                            <img src={"imgs/soup/1_10.jpg"}/>
+                                            <img src={"imgs/soup/1_9.jpg"}/>
+                                            <img src={"imgs/soup/1_6.jpg"}/>
+                                            <img src={"imgs/soup/1_7.jpg"}/>
+                                            <img src={"imgs/soup/1_8.jpg"}/>
+                                        
+                                        </ImageContainer>
                                     </Details>
                                 </Content>
                             ) : ( 
@@ -238,7 +258,7 @@ const ImageContainer = styled.div`
 
     margin-top: 20px;
     /* margin-top: 16px; */
-    height: 200px;
+    height: 400px;
 
     img {
         height: 100%;

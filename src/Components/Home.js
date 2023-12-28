@@ -15,6 +15,20 @@ const Home = ({ closePortals, aboutToggle, showAbout, manifestoToggle, showManif
     //         closePortals();
     //     }
     // }
+
+    var r1 = Math.random() * (9 - 12) + 9;
+    var r2 = Math.random() * (9 - 12) + 9;
+    var r3 = Math.random() * (9 - 12) + 9;
+    var r4 = Math.random() * (9 - 12) + 9;
+    var r5 = Math.random() * (9 - 12) + 9;
+    var r6 = Math.random() * (9 - 12) + 9;
+    var rand1 = r1.toString() + "s";
+    var rand2 = r2.toString() + "s";
+    var rand3 = r3.toString() + "s";
+    var rand4 = r4.toString() + "s";
+    var rand5 = r5.toString() + "s";
+    var rand6 = r6.toString() + "s";
+
     
     // let width = Math.sqrt((((34% + 140px) - (31% + 140px)) * ((34% + 140px) - (31% + 140px))) + ((61% - (56% + 35px)) * (61% - (56% + 35px))))
     return (
@@ -22,30 +36,32 @@ const Home = ({ closePortals, aboutToggle, showAbout, manifestoToggle, showManif
             {/* <img src={"imgs/outline.png"} style={{width: "1358px", height: "1454px", objectFit: "scale down", zIndex: 1}} /> */}
             {/* <img src={"imgs/bg1.png"} style={{position: "absolute", width: "80%", zIndex: "-1", marginLeft: "10%"}} /> */}
             <img src={"imgs/bg3.png"} style={{position: "fixed", zIndex: 0, display: "block",  opacity: 0.80 }} />
-        {/* About */}
-                <Connection x={"calc(45.5% + 90px)"} y={"calc(45% - 2px)"} width={"50px"} transform={"rotate(-44deg)"} />
-                <Node x={"calc(45.5% + 124px)"} y={"calc(45% - 24px)"}/>
-            <Portal onClick={aboutToggle} show={showAbout} x={"45.5%"} y={"45%"} to="about">Living Skin</Portal>
-        {/* Contact */}
-                <Connection x={"calc(38.9% + 4px)"} y={"calc(83% + 4px)"} width={"84px"} transform={"rotate(16deg)"} />
-                <Node x={"calc(38.9%)"} y={"calc(83% - 14px)"}/>
-            <Portal onClick={contactToggle} show={showContact} x={"43%"} y={"83%"} to="contact">Contact</Portal>
-        {/* Manifesto */}
-                <Connection x={"calc(54% + 27px)"} y={"calc(62%)"} width={"3%"} transform={"rotate(80deg)"} style={{transformOrigin: "top left"}} />
-                <Node x={"calc(54% + 20px)"} y={"calc(62%)"}/>
-            <Portal onClick={manifestoToggle} show={showManifesto} x={"54%"} y={"66%"} to="manifesto">Manifesto</Portal>
-        {/* Space */}
-                <Connection x={"calc(61% - 36px)"} y={"calc(27% + 38px)"} width={"50px"} transform={"rotate(-30deg)"} />
-                <Node x={"calc(61% - 36px)"} y={"calc(27% + 40px)"}/>
-            <Portal onClick={spaceToggle} show={showSpace} x={"61%"} y={"27%"} to="space">Our Space</Portal>
-        {/* Events */}
-                <Connection x={"calc(38% + 65px)"} y={"calc(15% + 1.1vw)"} width={"calc(5.5%)"} transform={"rotate(22.6deg)"} style={{transformOrigin: "bottom left"}} />
-                <Node x={"calc(38% + 65px + 5vw)"} y={"calc(15% + 3vw)"}/>
-            <Portal onClick={eventsToggle} show={showEvents} x={"38%"} y={"15%"} to="events">Events</Portal>
-        {/* Archive */}
-                <Connection x={"calc(30% + 136px)"} y={"calc(57% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
-                <Node x={"calc(30% + 136px + 2.5vw)"} y={"calc(57% + 3vw)"}/>
-            <Portal onClick={archiveToggle} show={showArchive} x={"30%"} y={"57%"} to="archive">Online Archive</Portal>
+    {/* LIVING SKIN */}
+                <Connection x={"calc(44% + 90px)"} y={"calc(33% - 2px)"} width={"50px"} transform={"rotate(-44deg)"} />
+                <Node x={"calc(44% + 124px)"} y={"calc(33% - 24px)"}/>
+            <Portal onClick={aboutToggle} show={showAbout} x={"44%"} y={"33%"} lapse={rand1} to="about">Living Skin</Portal>
+    {/* CONTACT */}
+                <Connection x={"calc(39% + 4px)"} y={"calc(84% + 4px)"} width={"84px"} transform={"rotate(16deg)"} />
+                <Node x={"calc(39%)"} y={"calc(84% - 14px)"}/>
+            <Portal onClick={contactToggle} show={showContact} x={"43%"} y={"84%"} lapse={rand2} to="contact">Contact</Portal>
+    {/* MANIFESTO */}
+                <Connection x={"calc(55% + 27px)"} y={"calc(62%)"} width={"3%"} transform={"rotate(80deg)"} style={{transformOrigin: "top left"}} />
+                <Node x={"calc(55% + 20px)"} y={"calc(62%)"}/>
+            <Portal onClick={manifestoToggle} show={showManifesto} x={"55%"} y={"66%"} lapse={rand3} to="manifesto">Manifesto</Portal>
+    {/* SPACE */}
+                <Connection x={"calc(63% - 36px)"} y={"calc(22% + 38px)"} width={"50px"} transform={"rotate(-30deg)"} />
+                <Node x={"calc(63% - 36px)"} y={"calc(22% + 40px)"}/>
+            <Portal onClick={spaceToggle} show={showSpace} x={"63%"} y={"22%"} lapse={rand4} to="space">Our Space</Portal>
+    {/* EVENTS */}
+                <Connection x={"calc(38% + 65px)"} y={"calc(12% + 1.1vw)"} width={"calc(5.5%)"} transform={"rotate(22.6deg)"} style={{transformOrigin: "bottom left"}} />
+                <Node x={"calc(38% + 65px + 5vw)"} y={"calc(12% + 3vw)"}/>
+            <Portal onClick={eventsToggle} show={showEvents} x={"38%"} y={"12%"} lapse={rand5} to="events">Events</Portal>
+    {/* ARCHIVE */}
+                <Connection x={"calc(29% + 136px)"} y={"calc(58% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
+                <Node x={"calc(29% + 136px + 2.5vw)"} y={"calc(58% + 3vw)"}/>
+            <Portal onClick={archiveToggle} show={showArchive} x={"29%"} y={"58%"} lapse={rand6} to="archive">Online Archive</Portal>
+
+            <Mission>A library/gallery exploring the relationship between knowledge and time as it pertains to the individual.</Mission>
         </Container>
     );
 };
@@ -85,10 +101,11 @@ const Container = styled.div`
     text-align: center;
 
     img {
-        top: 5vh;
+        top: 2vh;
         margin-left: 22vw;
-        height: 90vh;
+        height: 96vh;
         width: 56vw;
+        user-select: none;
     }
 
     @media screen and (max-width: 767px) {
@@ -102,9 +119,10 @@ const Container = styled.div`
 `
 
 const Portal = styled(LinkRouter)`
-    padding: 6px 12px 7px 12px;
+    padding: 10px 14px 10px 14px;
     border: 1px solid black;
     border-radius: 30px;
+    border-radius: 50%;
     /* background-color: white; */
     /* opacity: ${props => ((props.show) ? 1 : 0.8)}; */
     position: fixed;
@@ -119,9 +137,39 @@ const Portal = styled(LinkRouter)`
     /* color: ${props => ((props.show) ? "white" : "black")}; */
 
     font-family: "Times New Roman";
-    font-size: 18px;
+    font-size: 20px;
+    /* font-size: 3rem; */
     /* font-weight: ${props => ((props.show) ? 600 : 400 )}; */
     width: fit-content;
+
+    animation-delay: 0s;
+    -webkit-animation: fade 60s infinite;
+    animation: fade 60s infinite;
+
+    animation-name: stretch; 
+    animation-duration: ${props => props.lapse}; 
+    animation-timing-function: ease-out; 
+    animation-direction: alternate; 
+    animation-iteration-count: infinite; 
+    animation-play-state: running; 
+
+    @keyframes stretch { 
+        0% { 
+            transform: scale(.9); 
+            /* background-color: green;  */
+            border-radius: 70%; 
+        } 
+
+        50% { 
+            transform: scale(1.08); 
+            /* background-color: orange;  */
+        } 
+
+        100% { 
+            transform: scale(1.02); 
+            /* background-color: red;  */
+        } 
+    } 
 
     &:hover {
         cursor: pointer;
@@ -139,6 +187,7 @@ const Node = styled.div`
     height: 13px;
     width: 13px;
     background-color: #FFFF;
+    /* background-color: #FFFF; */
     border-radius: 50%;
     border: 1px solid black;
     display: inline-block;
@@ -259,4 +308,22 @@ export const EventDesription = styled.div`
     font-size: 18px;
     opacity: 0.7;
     line-height: 140%;
+`
+
+export const Mission = styled.div`
+    position: fixed;
+    left: 10%;
+    bottom: 48%;
+    width: 80%;
+    height: fit-content;
+    /* background-color: rgba(0, 0, 0, .6);  */
+    
+    text-align: center;
+    font-family: "Gill Sans";
+    font-size: 34px;
+    color: white;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 `

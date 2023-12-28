@@ -2,10 +2,14 @@ import React from 'react';
 import styled from "styled-components";
 // import { motion } from "framer-motion";
 import { Link as LinkRouter, useLocation } from 'react-router-dom';
+import QuickNav from './QuickNav';
 
 const Reset = ({ showReset, closePortals }) => {
     return (
-        <Container showReset={showReset} onClick={closePortals} to="" />
+        <Container showReset={showReset} onClick={closePortals} to="">
+            {/* <QuickNav /> */}
+        </Container>
+        
     );
 };
 
