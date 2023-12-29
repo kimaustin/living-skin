@@ -29,6 +29,8 @@ const Container = styled.div `
     height: 100%;
     margin: 0 auto;
 
+    opacity: 0.5;
+
     .pic {
     position: absolute;
     top: 0;

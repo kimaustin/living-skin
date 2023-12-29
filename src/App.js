@@ -118,17 +118,17 @@ function App() {
       {/* <QuickNav/> */}
       <Routes>
         <Route path="/" element={<div />} />
-        <Route path="/manifesto" element={<Manifesto showManifesto={manifesto} manifestoToggle={toggleManifesto} />} />
-        <Route path="/about" element={<About showAbout={about} manifestoToggle={toggleManifesto} aboutToggle={toggleAbout} />} />
-        <Route path="/contact" element={<Contact showContact={contact} />} />
-        <Route path="/space" element={<Space showSpace={space} />} />
-        <Route path="/events" element={<Events showEvents={events} />} />
-        <Route path="/archive" element={<Archive showArchive={archive} />} />
+        <Route path="/manifesto" element={<Manifesto closePortals={closePortals} />} />
+        <Route path="/about" element={<About closePortals={closePortals} />} />
+        <Route path="/contact" element={<Contact closePortals={closePortals} />} />
+        <Route path="/space" element={<Space closePortals={closePortals} />} />
+        <Route path="/events" element={<Events closePortals={closePortals} />} />
+        <Route path="/archive" element={<Archive closePortals={closePortals} />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
         {/* <Route path="/manifesto" element={<Manifesto />} /> */}
       </Routes>
-      <Reset showReset={reset} closePortals={closePortals} />
-      <Close showReset={reset} closePortals={closePortals} />
+      {/* <Reset showReset={reset} closePortals={closePortals} />
+      <Close showReset={reset} closePortals={closePortals} /> */}
     {/* </ThemeProvider> */}
   </Router>
   );

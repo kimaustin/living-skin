@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Close from './Close';
+import Reset from './Reset';
 
-const Contact = ({ showContact }) => {
+const Contact = ({ closePortals }) => {
 
     return (
-        <Container showContact={showContact}>
-            <h2 style={{ fontFamily: "Time New Roman", marginTop: "2px" }}>Collaborate with us</h2>
-            <p style={{ fontFamily: "Time New Roman", lineHeight: "137%" }}>
-                Gallery proposals open for February 2024 <br />
-                Library Event proposals open for 2024 
-            </p>
-            <p style={{ fontFamily: "Time New Roman", lineHeight: "137%", marginBottom: 0}}>
-                Proposals accepted via email <br />
-                <a href="mailto:admin@livingskin.space" ><i>admin@livingskin.space</i></a>
-            </p>
-            
-        </Container>
+        <>
+            <Container>
+                <h2 style={{ fontFamily: "Time New Roman", marginTop: "2px" }}>Collaborate with us</h2>
+                <p style={{ fontFamily: "Time New Roman", lineHeight: "137%" }}>
+                    Gallery proposals open for February 2024 <br />
+                    Library Event proposals open for 2024 
+                </p>
+                <p style={{ fontFamily: "Time New Roman", lineHeight: "137%", marginBottom: 0}}>
+                    Proposals accepted via email <br />
+                    <a href="mailto:admin@livingskin.space" ><i>admin@livingskin.space</i></a>
+                </p>
+            </Container>
+            <Close closePortals={closePortals} />
+            <Reset closePortals={closePortals} />
+        </>
     );
 };
 
@@ -36,9 +41,12 @@ const Container = styled.div`
     
     text-align: center;
 
-    z-index: ${props => ((props.showContact) ? 3 : -1)};
+    /* z-index: ${props => ((props.showContact) ? 3 : -1)};
     display: ${props => ((props.showContact) ? "block" : "none")};
-    user-select: ${props => ((props.showContact) ? "auto" : "none")};
+    user-select: ${props => ((props.showContact) ? "auto" : "none")}; */
+    z-index: 3;
+    display: "block";
+    user-select: "auto";
     
     border: 1px solid black;
     background-color: white;

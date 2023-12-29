@@ -6,10 +6,11 @@ const QuickNav = ({ closePortals, aboutToggle, showAbout, manifestoToggle, showM
 
     return (
         <Container showAbout={showAbout}>
-                <Nav y={"3%"} onClick={aboutToggle} show={showAbout} to="about">About Us</Nav>
-                <Nav y={"7%"} onClick={spaceToggle} show={showSpace} to="space">Our Space</Nav>
-                <Nav y={"11%"} onClick={eventsToggle} show={showEvents} to="events">Calendar</Nav>
-                <Nav y={"15%"} onClick={archiveToggle} show={showArchive} to="archive">Online Archive</Nav>
+                <Nav y={"3%"} onClick={aboutToggle} show={showAbout} to="/about">About Us</Nav>
+                <Nav y={"7%"} onClick={spaceToggle} show={showSpace} to="/space">Our Space</Nav>
+                <Nav y={"11%"} onClick={eventsToggle} show={showEvents} to="/events">Calendar</Nav>
+                <Nav y={"15%"} onClick={archiveToggle} show={showArchive} to="/archive">Online Archive</Nav>
+                <Nav y={"19%"} onClick={archiveToggle} show={showArchive} to="/contact">Contact Us</Nav>
         </Container>
     );
 };

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import Markdown from 'markdown-to-jsx';
+import Reset from './Reset';
+import Close from './Close';
 import { Link as LinkRouter, useLocation } from 'react-router-dom';
 
-const Manifesto = ({ showManifesto, manifestoToggle }) => {
+const Manifesto = ({ closePortals }) => {
 
     // const location = useLocation();
     // let currPage = location.pathname.split("/").pop();
@@ -32,15 +34,19 @@ const Manifesto = ({ showManifesto, manifestoToggle }) => {
     });
 
     return (
-        <Container showManifesto={showManifesto}>
-            <Header>Manifesto</Header>
-            {/* <img src={"imgs/bg3.png"} style={{ paddingLeft: "4vw", paddingTop: "3vh", height: "90px" }} /> */}
-            {/* <img src={"imgs/bg3.png"} style={{ position: "fixed", left: "calc(8vw)", top: "calc(50vh - 60px)", width: "120px", filter: "drop-shadow(10px 8px 3px #EB849D)" }} /> */}
-            {/* <img src={"imgs/bg3.png"} style={{ position: "fixed", right: "calc(8vw)", top: "calc(50vh - 60px)", width: "120px", filter: "drop-shadow(10px 8px 3px #EB849D)" }} /> */}
-            <Markdown style={{ paddingLeft: "3.5vw", paddingRight: "3.5vw", fontFamily: "Times New Roman", fontSize: "18px", lineHeight: "1.48em", textAlign: "justify", textJustify: "inter-word" }}>
-                {post}
-            </Markdown>
-        </Container>
+        <>
+            <Content>
+                <Header>Manifesto</Header>
+                {/* <img src={"imgs/bg3.png"} style={{ paddingLeft: "4vw", paddingTop: "3vh", height: "90px" }} /> */}
+                {/* <img src={"imgs/bg3.png"} style={{ position: "fixed", left: "calc(8vw)", top: "calc(50vh - 60px)", width: "120px", filter: "drop-shadow(10px 8px 3px #EB849D)" }} /> */}
+                {/* <img src={"imgs/bg3.png"} style={{ position: "fixed", right: "calc(8vw)", top: "calc(50vh - 60px)", width: "120px", filter: "drop-shadow(10px 8px 3px #EB849D)" }} /> */}
+                <Markdown style={{ zIndex: "2", paddingLeft: "3.5vw", paddingRight: "3.5vw", fontFamily: "Times New Roman", fontSize: "18px", lineHeight: "1.48em", textAlign: "justify", textJustify: "inter-word" }}>
+                    {post}
+                </Markdown>
+            </Content>
+            <Close closePortals={closePortals} />
+            <Reset closePortals={closePortals} />
+        </>
     );
 };
 
@@ -49,8 +55,7 @@ export default Manifesto;
 
 // STYLES ------------------------
 
-
-const Container = styled.div`
+const Content = styled.div`
     position: fixed;
     top: 2vh;
     left: 31%;
@@ -58,10 +63,10 @@ const Container = styled.div`
     height: calc(93.5vh);
     overflow-y: scroll;
     padding-top: 1vh;
-    
-    z-index: ${props => ((props.showManifesto) ? 3 : -1)};
-    display: ${props => ((props.showManifesto) ? "block" : "none")};
-    user-select: ${props => ((props.showManifesto) ? "auto" : "none")};
+
+    z-index: 3;
+    display: "block";
+    user-select: "auto";
     
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */

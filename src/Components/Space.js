@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Close from './Close';
+import Reset from './Reset';
 
-const Space = ({ showSpace }) => {
+const Space = ({ closePortals }) => {
 
     return (
-        <Container showSpace={showSpace}>
-            <Header>Our Space</Header>
-            <p style={{ marginTop: "0", marginBottom: "-10px" }} >more pctures and highlights can be found on our instagram</p>
-            <p><a href="https://instagram.com/living_skin_space">@Living_Skin_Space</a></p>
-            <br />
-            <img src={"imgs/space1.jpeg"} />
-            <img src={"imgs/space5.jpeg"} />
-            <img src={"imgs/space.jpeg"} />
-            <img src={"imgs/space2.jpeg"} />
-            <img src={"imgs/space3.jpeg"} />
-            <img src={"imgs/space4.jpeg"} />
-        </Container>
+        <>
+            <Container>
+                <Header>Our Space</Header>
+                <p style={{ marginTop: "0", marginBottom: "-10px" }} >More pctures and highlights found on our instagram:</p>
+                <p><a href="https://instagram.com/living_skin_space">@Living_Skin_Space</a></p>
+                <br />
+                    {/* <img src={"imgs/space1.jpeg"} /> */}
+                <img src={"imgs/space5.jpeg"} />
+                <img src={"imgs/space2.jpeg"} />
+                <img src={"imgs/space3.jpeg"} />
+                <img src={"imgs/space4.jpeg"} />
+            </Container>
+            <Close closePortals={closePortals} />
+            <Reset closePortals={closePortals} />
+        </>
+        
     );
 };
 
@@ -26,11 +32,12 @@ export default Space;
 // STYLES ------------------------
 
 const Container = styled.div`
+    background-color: white;
     position: fixed;
-    top: 2%;
-    left: 2%;
-    width: 88%;
-    height: 81%;
+    top: 0%;
+    left: 16%;
+    width: 60%;
+    height: 100%;
     padding: 4%;
 
     overflow-x: hidden;
@@ -39,44 +46,25 @@ const Container = styled.div`
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     ::-webkit-scrollbar {
-      display: none;
+    display: none;
     }
 
-    display: grid:
-    display: flex;
     flex-wrap: wrap;
-    /* padding: 0 4px; */
     vertical-align: middle;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
-    /* align-items: justify; */
-    
-    z-index: ${props => ((props.showSpace) ? 3 : -1)};
-    /* display: ${props => ((props.showSpace) ? "grid" : "none")}; */
-    user-select: ${props => ((props.showSpace) ? "auto" : "none")};
-    
+
+    z-index: 3;
+    display: "grid";
+    user-select: "auto";
+
     border: 1px solid black;
     background-color: white;
 
     img {
         display: flex-grid;
-        /* width: 15%; */
         width: 19%;
         margin-right: 1%;
         objectFit: contain;
         margin-bottom: 1%;
-    }
-
-    @media screen and (max-width: 767px) {
-        top: 0;
-        left: 0;
-        width: calc(94%); 
-        height: 90%;
-        padding-top: 8%;
-        padding-bottom: 20%;
-
-        img {
-            width: 48%;
-        }
     }
 `
 
@@ -84,9 +72,9 @@ const Header = styled.div`
     position: fixed;
     padding-top: 7px;
     padding-bottom: 0;
-    top: 2%;
-    left: 2%;
-    width: 96%;
+    top: 0;
+    left: 16%;
+    width: 68%;
     height: 22px;
 
     background-color: white;

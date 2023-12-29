@@ -2,9 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import { Link as LinkRouter } from 'react-router-dom';
 
-const Close = ({ showReset, closePortals }) => {
+const Close = ({ closePortals }) => {
     return (
-        <Container showClose={showReset} onClick={closePortals} to="" style={{textDecoration: "none"}}>
+        <Container onClick={closePortals} to="/" style={{textDecoration: "none"}}>
             Close
         </Container>
     );
@@ -27,16 +27,22 @@ const Container = styled(LinkRouter)`
     padding-top: 10px;
     justify-content: center;
     justify-text: center;
-    font-family: "Times New Roman;"
+    font-family: "Gill Sans;"
     text-decoration: none;
+    text-align: center;
 
-    z-index: ${props => ((props.showClose) ? 999 : -1)};
-    opacity: ${props => ((props.showClose) ? 1 : 0)};
-    display: ${props => ((props.showClose) ? "flex" : "none")};
+    /* z-index: ${props => ((props.showClose) ? 999 : -1)}; */
+    z-index: 4;
+    /* opacity: ${props => ((props.showClose) ? 1 : 0)}; */
+    /* display: ${props => ((props.showClose) ? "flex" : "none")}; */
     filter: drop-shadow(18px 8px 3px #EB849D);
 
     &:hover {
         background-color: #F1F1F1;
+    }
+
+    p {
+        font-family: "Gill Sans";
     }
 
     @media screen and (max-width: 767px) {

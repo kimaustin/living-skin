@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link as LinkRouter } from 'react-router-dom';
+import Close from './Close';
+import Reset from './Reset';
 
-const Archive = ({ showArchive }) => {
+const Archive = ({ closePortals }) => {
 
     const [type, setType] = useState(4);
 
     return (
-        <Container showArchive={showArchive}>
-
+        <>
+         <Container>
             <CategoriesList>
                 <Category selected={(type == 4)} onClick={()=> setType(4)}>Exhibitions</Category>
-                <Category selected={(type == 0)} onClick={()=> setType(0)}>Library Catalog</Category>
                 <Category selected={(type == 1)} onClick={()=> setType(1)}>Powerpoint Presentation Club</Category>
-                <Category selected={(type == 2)} onClick={()=> setType(2)}>Film Screenings</Category>
                 <Category selected={(type == 3)} onClick={()=> setType(3)}>Soup Clinic</Category>
+                <Category selected={(type == 2)} onClick={()=> setType(2)}>Film Screenings</Category>
+                <Category selected={(type == 0)} onClick={()=> setType(0)}>Library Catalog</Category>
             </CategoriesList>
-
             {/* Content */}
             {
                 (type == 0) ? (
@@ -38,14 +39,16 @@ const Archive = ({ showArchive }) => {
                                 <LinkRouter to="https://docs.google.com/presentation/d/1JEp8gTKWkCy732Vrz95zMw6pP-BJZbAY4uuTDtnJVwA/edit?usp=sharing" target="blank" >New Existence Framework Questions</LinkRouter>
                             </Info>
                             <Details>
-                                <Title><b>Week 1: </b> Demoscene, Glitch Art, Lunchables</Title>
-                                <p>December 11, 2023</p>
-                                <LinkRouter to="https://docs.google.com/presentation/d/1Wh2tCD4-XgL2Z4pZ-H6yiFsxcEs28rSWL7oVAJZ3JcA/edit?usp=sharing" target="blank" ><p>Demoscene: A Computer Art Culture</p></LinkRouter>
-                                <ImageContainer>
-                                    <img src={"imgs/ppc_1_1.jpeg"}/>
-                                    <img src={"imgs/ppc_1_2.jpeg"}/>
-                                    <img src={"imgs/ppc_1_3.jpeg"}/>
-                                </ImageContainer>
+                                {/* <Item> */}
+                                    <Title><b>Week 1: </b> Demoscene, Glitch Art, Lunchables</Title>
+                                    <p>December 11, 2023</p>
+                                    <LinkRouter to="https://docs.google.com/presentation/d/1Wh2tCD4-XgL2Z4pZ-H6yiFsxcEs28rSWL7oVAJZ3JcA/edit?usp=sharing" target="blank" ><p>Demoscene: A Computer Art Culture</p></LinkRouter>
+                                    <ImageContainer>
+                                        <img src={"imgs/ppc_1_1.jpeg"}/>
+                                        <img src={"imgs/ppc_1_2.jpeg"}/>
+                                        <img src={"imgs/ppc_1_3.jpeg"}/>
+                                    </ImageContainer>
+                                {/* </Item> */}
                             </Details>
                         </Content>
                     ) : (
@@ -114,7 +117,11 @@ const Archive = ({ showArchive }) => {
                         )
                     )
             }
-        </Container>
+            </Container>
+            <Close closePortals={closePortals} />
+            <Reset closePortals={closePortals} />
+        </>
+       
     );
 };
 
@@ -126,23 +133,27 @@ export default Archive;
 
 const Container = styled.div`
     position: fixed;
-    top: 4vh;
-    left: 8%;
+    top: 6vh;
+    left: 11%;
     width: 76%;
-    height: 78%;
+    height: 82%;
 
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    /* padding-right: 2%; */
 
     /* border-radius: 5%; */
     
-    z-index: ${props => ((props.showArchive) ? 3 : -1)};
+    /* z-index: ${props => ((props.showArchive) ? 3 : -1)};
     display: ${props => ((props.showArchive) ? "block" : "none")};
-    user-select: ${props => ((props.showArchive) ? "auto" : "none")};
-    
+    user-select: ${props => ((props.showArchive) ? "auto" : "none")}; */
+    z-index: 3;
+    display: "block";
+    user-select: "auto";
+
     border: 1px solid black;
+    /* border-top: 3px solid black; */
     background-color: white;
     
 
@@ -159,7 +170,8 @@ const Container = styled.div`
 const Content = styled.div`
     /* padding: 1%; */
     /* text-align: center; */
-    font-family: "Times New Roman";
+    /* font-family: "Times New Roman"; */
+    font-family: "Gill Sans";
     /* display: grid; */
     /* grid-template-columns: 22% 86%; */
     /* column-gap: 2%; */
@@ -171,6 +183,9 @@ const Content = styled.div`
     p {
         line-height: 100%;
     }
+
+    /* border: 1px solid black; */
+    /* height: fit-content; */
 
     @media screen and (max-width: 767px) {
         border: 1px solid black;
@@ -191,7 +206,7 @@ const Content = styled.div`
 
 const Info = styled.div`
     /* position: sticky; */
-    width: 22%;
+    width: 21%;
     /* margin-top: -3.2vh; */
     /* border: 1px solid black; */
     position: absolute;
@@ -214,8 +229,8 @@ const Details = styled.div`
     position: absolute;
     top: 0;
     left: 28%;
-    width: 65%;
-    height: calc(100% - 4.5vh);
+    width: 72%;
+    height: calc(100% - 6vh);
 
     padding-top: 6vh;
     /* border: 1px solid black; */
@@ -242,6 +257,7 @@ const Details = styled.div`
 
 const Title = styled.div`
     font-family: "Times New Roman";
+    font-family: "Gill Sans";
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: -10px;
@@ -269,11 +285,14 @@ const ImageContainer = styled.div`
 
 const CategoriesList = styled.div`
     position: fixed;
-    top: 2%;
+    bottom: calc(94vh - 1px);
     left: 11%;
     display: flex;
     width: fit-content;
-    height: fit-content;
+    /* height: fit-content; */
+    /* height: 4vh; */
+    height: 2vh;
+    min-height: 40px;
     z-index: 3;
 
     @media screen and (max-width: 767px) {
@@ -294,19 +313,28 @@ const Category = styled.div`
     padding: 10px;
     margin-right: 4px;
     width: fit-content;
+    border-radius: 8px 8px 0 0;
     
     border: 1px solid black;
-    background-color: ${props => ((props.selected) ? "yellow" : "white")};
+    background-color: ${props => ((props.selected) ? "black" : "white")};
+    color: ${props => ((props.selected) ? "white" : "black")};
 
+    font-family: "Gill Sans";
     user-select: none;
 
     &:hover {
         cursor: pointer;
-        background-color: ${props => ((props.selected) ? "yellow" : "#F1F1F1")};
+        background-color: ${props => ((props.selected) ? "black" : "#F1F1F1")};
     }
 
     @media screen and (max-width: 767px) {
         height: fit-content;
         font-size: 13px;
     }
+`
+
+
+const Item = styled.div`
+    height: fit-content;
+    border: 1px solid black;
 `
