@@ -11,10 +11,10 @@ const Events = ({ closePortals }) => {
                 <Header>Events</Header>
                 {/* <h1 style={{ marginBottom: 0 }} >Living Skin Events</h1> */}
                 <p style={{ marginTop: "3vh", marginBottom: "-10px" }} >Check our Eventbrite or DM us on instagram to sign up / more details!</p>
-                <p><a href="https://instagram.com/living_skin_space">@Living_Skin_Space</a></p>
-                <p><i>calendars make take a second to load...</i></p>
+                <p><a href="https://instagram.com/living___skin">Instagram</a></p>
+                {/* <p><i>calendars make take a second to load...</i></p> */}
                 <iframe src="https://calendar.google.com/calendar/embed?height=450&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=Y18zY2EzYzU1NGMwMmViM2E5ZmJhMjQxNzU1MjljMWY3MDQ4ZDBlZGM5NGJiOTg5YmZlYmEzMmYyMzdmOTNmYTdkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%238E24AA" style={{borderWidth: 0, width: "100%", height: 450, frameBorder: 0, scrolling: "no", marginBottom: "0"}} ></iframe>
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showNav=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=AGENDA&src=Y18zY2EzYzU1NGMwMmViM2E5ZmJhMjQxNzU1MjljMWY3MDQ4ZDBlZGM5NGJiOTg5YmZlYmEzMmYyMzdmOTNmYTdkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%238E24AA" style={{borderWidth: 0, width: "100%", height: 700, frameBorder: 0, scrolling: "no" }}></iframe>
+                {/* <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showNav=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=AGENDA&src=Y18zY2EzYzU1NGMwMmViM2E5ZmJhMjQxNzU1MjljMWY3MDQ4ZDBlZGM5NGJiOTg5YmZlYmEzMmYyMzdmOTNmYTdkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%238E24AA" style={{borderWidth: 0, width: "100%", height: 700, frameBorder: 0, scrolling: "no" }}></iframe> */}
             </Container>
             <Close closePortals={closePortals} />
             <Reset closePortals={closePortals} />

@@ -18,6 +18,7 @@ import Archive from './Components/Archive';
 import Close from './Components/Close';
 import { BackgroundDissolve } from './Components/BackgroundDissolve';
 import QuickNav from './Components/QuickNav';
+import Current from "./Components/Current";
 
 function App() {
 
@@ -60,6 +61,12 @@ function App() {
       setReset(true);
     }
 
+  const [current, setCurrent] = useState(false);
+  const toggleCurrent = (currPage) => {
+      setCurrent(!current);
+      setReset(true);
+    }
+
   const [reset, setReset] = useState(false);
   const closePortals = () => {
     console.log("portals should close");
@@ -70,6 +77,7 @@ function App() {
     setContact(false);
     setArchive(false);
     setReset(false);
+    setCurrent(false);
   }
 
   // const location = useLocation();
@@ -100,7 +108,8 @@ function App() {
       {/* <Manifesto showManifesto={manifesto} /> */}
       {/* <PPAFTE /> */}
       <BackgroundDissolve />
-      <Home 
+      <Navigation />
+      {/* <Home 
           aboutToggle={toggleAbout} 
           showAbout={about} 
           manifestoToggle={toggleManifesto}
@@ -113,8 +122,10 @@ function App() {
           showContact={contact}
           archiveToggle={toggleArchive}
           showArchive={archive}
+          currentToggle={toggleCurrent}
+          showCurrent={current}
           closePortals={closePortals}
-      />
+      /> */}
       {/* <QuickNav/> */}
       <Routes>
         <Route path="/" element={<div />} />
@@ -124,6 +135,7 @@ function App() {
         <Route path="/space" element={<Space closePortals={closePortals} />} />
         <Route path="/events" element={<Events closePortals={closePortals} />} />
         <Route path="/archive" element={<Archive closePortals={closePortals} />} />
+        <Route path="/current" element={<Current closePortals={closePortals} />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
         {/* <Route path="/manifesto" element={<Manifesto />} /> */}
       </Routes>

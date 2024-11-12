@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 // import { motion } from "framer-motion";
 import styled from 'styled-components';
 import { Link as LinkRouter, useLocation } from 'react-router-dom';
-import { RegLink, NavLink } from './Navigation';
+import Navigation, { RegLink, NavLink } from './Navigation';
 import Events from './Events';
+import { BackgroundDissolve } from './BackgroundDissolve';
 
-const Home = ({ closePortals, aboutToggle, showAbout, manifestoToggle, showManifesto, spaceToggle, showSpace, eventsToggle, showEvents, contactToggle, showContact, archiveToggle, showArchive }) => {
+const Home = ({ closePortals, currentToggle, showCurrent, aboutToggle, showAbout, manifestoToggle, showManifesto, spaceToggle, showSpace, eventsToggle, showEvents, contactToggle, showContact, archiveToggle, showArchive }) => {
 
     const location = useLocation();
     let currPage = location.pathname.split("/").pop();
@@ -35,41 +36,61 @@ const Home = ({ closePortals, aboutToggle, showAbout, manifestoToggle, showManif
     // let width = Math.sqrt((((34% + 140px) - (31% + 140px)) * ((34% + 140px) - (31% + 140px))) + ((61% - (56% + 35px)) * (61% - (56% + 35px))))
     return (
         <Container>
+      <BackgroundDissolve />
+            <Navigation 
+            aboutToggle={aboutToggle} 
+            showAbout={showAbout} 
+            manifestoToggle={manifestoToggle}
+            showManifesto={showManifesto}
+            spaceToggle={spaceToggle}
+            showSpace={showSpace}
+            eventsToggle={eventsToggle}
+            showEvents={showEvents}
+            contactToggle={contactToggle}
+            showContact={showContact}
+            archiveToggle={archiveToggle}
+            showArchive={showArchive}
+            currentToggle={currentToggle}
+            showCurrent={showCurrent}
+            closePortals={closePortals} />
             {/* <img src={"imgs/outline.png"} style={{width: "1358px", height: "1454px", objectFit: "scale down", zIndex: 1}} /> */}
             {/* <img src={"imgs/bg1.png"} style={{position: "absolute", width: "80%", zIndex: "-1", marginLeft: "10%"}} /> */}
-            <img src={"imgs/bg3.png"} style={{position: "fixed", zIndex: 0, display: "block",  opacity: 0.85 }} />
+            {/* <img src={"imgs/bg3.png"} style={{position: "fixed", zIndex: 0, display: "block",  opacity: 0.85 }} /> */}
             {/* <img src={"imgs/logo.png"} style={{position: "fixed", zIndex: 0, display: "block",  opacity: 0.85 }} /> */}
-            <Logo ><img src={"imgs/logo.png"}/></Logo>
+            {/* <Logo ><img src={"imgs/logo.png"}/></Logo> */}
     {/* ABOUT */}
-                <Connection x={"calc(44% + 90px)"} y={"calc(33% - 2px)"} width={"50px"} transform={"rotate(-44deg)"} />
+                {/* <Connection x={"calc(44% + 90px)"} y={"calc(33% - 2px)"} width={"50px"} transform={"rotate(-44deg)"} />
                 <Node x={"calc(44% + 124px)"} y={"calc(33% - 24px)"}/>
-            <Portal onClick={aboutToggle} show={showAbout} x={"44%"} y={"33%"} lapse={rand1} to="/about">About Us</Portal>
+            <Portal onClick={aboutToggle} show={showAbout} x={"44%"} y={"33%"} lapse={rand1} to="/about">About Us</Portal> */}
     {/* CONTACT */}
-                <Connection x={"calc(39% + 4px)"} y={"calc(84% + 4px)"} width={"84px"} transform={"rotate(16deg)"} />
+                {/* <Connection x={"calc(39% + 4px)"} y={"calc(84% + 4px)"} width={"84px"} transform={"rotate(16deg)"} />
                 <Node x={"calc(39%)"} y={"calc(84% - 14px)"}/>
-            <Portal onClick={contactToggle} show={showContact} x={"43%"} y={"84%"} lapse={rand2} to="/contact">Contact</Portal>
+            <Portal onClick={contactToggle} show={showContact} x={"43%"} y={"84%"} lapse={rand2} to="/contact">Contact</Portal> */}
     {/* MANIFESTO */}
-                <Connection x={"calc(55% + 27px)"} y={"calc(62%)"} width={"3%"} transform={"rotate(80deg)"} style={{transformOrigin: "top left"}} />
+                {/* <Connection x={"calc(55% + 27px)"} y={"calc(62%)"} width={"3%"} transform={"rotate(80deg)"} style={{transformOrigin: "top left"}} />
                 <Node x={"calc(55% + 20px)"} y={"calc(62%)"}/>
-            <Portal onClick={manifestoToggle} show={showManifesto} x={"55%"} y={"66%"} lapse={rand3} to="/manifesto">Manifesto</Portal>
+            <Portal onClick={manifestoToggle} show={showManifesto} x={"55%"} y={"66%"} lapse={rand3} to="/manifesto">Manifesto</Portal> */}
     {/* SPACE */}
-                <Connection x={"calc(63% - 36px)"} y={"calc(22% + 38px)"} width={"50px"} transform={"rotate(-30deg)"} />
+                {/* <Connection x={"calc(63% - 36px)"} y={"calc(22% + 38px)"} width={"50px"} transform={"rotate(-30deg)"} />
                 <Node x={"calc(63% - 36px)"} y={"calc(22% + 40px)"}/>
-            <Portal onClick={spaceToggle} show={showSpace} x={"63%"} y={"22%"} lapse={rand4} to="/space">Our Space</Portal>
+            <Portal onClick={spaceToggle} show={showSpace} x={"63%"} y={"22%"} lapse={rand4} to="/space">Our Space</Portal> */}
     {/* EVENTS */}
-                <Connection x={"calc(38% + 65px)"} y={"calc(12% + 1.1vw)"} width={"calc(5.5%)"} transform={"rotate(22.6deg)"} style={{transformOrigin: "bottom left"}} />
+                {/* <Connection x={"calc(38% + 65px)"} y={"calc(12% + 1.1vw)"} width={"calc(5.5%)"} transform={"rotate(22.6deg)"} style={{transformOrigin: "bottom left"}} />
                 <Node x={"calc(38% + 65px + 5vw)"} y={"calc(12% + 3vw)"}/>
-            <Portal onClick={eventsToggle} show={showEvents} x={"38%"} y={"12%"} lapse={rand5} to="/events">Events</Portal>
+            <Portal onClick={eventsToggle} show={showEvents} x={"38%"} y={"12%"} lapse={rand5} to="/events">Events</Portal> */}
     {/* ARCHIVE */}
-                <Connection x={"calc(29% + 136px)"} y={"calc(58% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
+                {/* <Connection x={"calc(29% + 136px)"} y={"calc(58% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
                 <Node x={"calc(29% + 136px + 2.5vw)"} y={"calc(58% + 3vw)"}/>
-            <Portal onClick={archiveToggle} show={showArchive} x={"29%"} y={"58%"} lapse={rand6} to="/archive">Online Archive</Portal>
-
-            <Mission lapse={randName}>
+            <Portal onClick={archiveToggle} show={showArchive} x={"29%"} y={"58%"} lapse={rand6} to="/archive">Online Archive</Portal> */}
+    {/* ARCHIVE */}
+                {/* <Connection x={"calc(29% + 136px)"} y={"calc(58% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
+                    <Node x={"calc(29% + 136px + 2.5vw)"} y={"calc(58% + 3vw)"}/>
+                <Portal onClick={currentToggle} show={showCurrent} x={"32%"} y={"57.5%"} lapse={rand6} to="/current">Current</Portal> */}
+            {/* <Mission lapse={randName}>
                 <p>...lives in the space between a Library and a Gallery.</p>
                 <br />
                 <p>An invitation to feed, cultivate, and observe objects of knowledge and art as framed in Living Skin.</p>
-            </Mission>
+            </Mission> */}
         </Container>
     );
 };
@@ -109,10 +130,10 @@ const Container = styled.div`
     text-align: center;
 
     img {
-        top: 2vh;
-        margin-left: 22vw;
-        height: 96vh;
-        width: 56vw;
+        top: 3vh;
+        margin-left: 23vw;
+        height: 94vh;
+        width: 54vw;
         user-select: none;
     }
 

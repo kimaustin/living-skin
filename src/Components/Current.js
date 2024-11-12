@@ -8,14 +8,12 @@ const About = ({ closePortals }) => {
 
     return (
         <>
-            <Container>
-                    We are called to set in motion a disturbance in art and experiential learning.
-                    Dark clouds have come and gone, but life has surely done its best to go on. 
-                <p style={{ fontSize: "22px" }}>
-                    As discoverers learners and expressers, we ought to position ourselves as partners with knowledge and art, not owners or collectors of it, respecting their spirit. Art and knowledge simply pass through us—we can only but experience our spirit and reactions to their movements.
-                </p>
+            {/* <Container> */}
+                <GradientBox>
+                    <Title>SALLY</Title>
+                </GradientBox>
                 <LinkRouter to="/manifesto" >More in our manifesto...</LinkRouter>
-            </Container>
+            {/* </Container> */}
             <Close closePortals={closePortals} />
             <Reset closePortals={closePortals} />
         </>
@@ -73,4 +71,15 @@ const Container = styled.div`
         overflow-y: scroll;
 
     }
+`
+
+const GradientBox = styled.div`
+    width: 50%;
+    height: 50%:
+    background-image: linear-gradient(grey, white);
+`
+
+const Title = styled.p`
+    text-size: 16px;
+    font-weight: bold;
 `
