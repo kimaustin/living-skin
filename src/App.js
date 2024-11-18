@@ -13,6 +13,7 @@ import Reset from './Components/Reset';
 import Contact from './Components/Contact';
 import PPAFTE from './Components/PPAFTE';
 import Space from './Components/Space';
+import Radio from './Components/Radio';
 import Events from './Components/Events';
 import Archive from './Components/Archive';
 import Close from './Components/Close';
@@ -108,8 +109,8 @@ function App() {
       {/* <Manifesto showManifesto={manifesto} /> */}
       {/* <PPAFTE /> */}
       <BackgroundDissolve />
-      <Navigation />
-      {/* <Home 
+      {/* <Navigation /> */}
+      <Home 
           aboutToggle={toggleAbout} 
           showAbout={about} 
           manifestoToggle={toggleManifesto}
@@ -125,7 +126,7 @@ function App() {
           currentToggle={toggleCurrent}
           showCurrent={current}
           closePortals={closePortals}
-      /> */}
+      />
       {/* <QuickNav/> */}
       <Routes>
         <Route path="/" element={<div />} />
@@ -136,6 +137,7 @@ function App() {
         <Route path="/events" element={<Events closePortals={closePortals} />} />
         <Route path="/archive" element={<Archive closePortals={closePortals} />} />
         <Route path="/current" element={<Current closePortals={closePortals} />} />
+        <Route path="/radio" element={<Radio closePortals={closePortals} />} />
         {/* <Route path="/blog" element={<Blog />} /> */}
         {/* <Route path="/manifesto" element={<Manifesto />} /> */}
       </Routes>

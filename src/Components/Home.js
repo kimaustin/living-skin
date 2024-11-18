@@ -36,8 +36,8 @@ const Home = ({ closePortals, currentToggle, showCurrent, aboutToggle, showAbout
     // let width = Math.sqrt((((34% + 140px) - (31% + 140px)) * ((34% + 140px) - (31% + 140px))) + ((61% - (56% + 35px)) * (61% - (56% + 35px))))
     return (
         <Container>
-      <BackgroundDissolve />
-            <Navigation 
+      {/* <BackgroundDissolve /> */}
+            {/* <Navigation 
             aboutToggle={aboutToggle} 
             showAbout={showAbout} 
             manifestoToggle={manifestoToggle}
@@ -52,40 +52,44 @@ const Home = ({ closePortals, currentToggle, showCurrent, aboutToggle, showAbout
             showArchive={showArchive}
             currentToggle={currentToggle}
             showCurrent={showCurrent}
-            closePortals={closePortals} />
+            closePortals={closePortals} /> */}
             {/* <img src={"imgs/outline.png"} style={{width: "1358px", height: "1454px", objectFit: "scale down", zIndex: 1}} /> */}
             {/* <img src={"imgs/bg1.png"} style={{position: "absolute", width: "80%", zIndex: "-1", marginLeft: "10%"}} /> */}
-            {/* <img src={"imgs/bg3.png"} style={{position: "fixed", zIndex: 0, display: "block",  opacity: 0.85 }} /> */}
+            <img src={"imgs/bg3.png"} style={{position: "fixed", zIndex: 0, display: "block",  opacity: 0.85 }} />
             {/* <img src={"imgs/logo.png"} style={{position: "fixed", zIndex: 0, display: "block",  opacity: 0.85 }} /> */}
             {/* <Logo ><img src={"imgs/logo.png"}/></Logo> */}
-    {/* ABOUT */}
-                {/* <Connection x={"calc(44% + 90px)"} y={"calc(33% - 2px)"} width={"50px"} transform={"rotate(-44deg)"} />
+   {/* ABOUT */}
+   <Connection x={"calc(44% + 90px)"} y={"calc(33% - 2px)"} width={"50px"} transform={"rotate(-44deg)"} />
                 <Node x={"calc(44% + 124px)"} y={"calc(33% - 24px)"}/>
-            <Portal onClick={aboutToggle} show={showAbout} x={"44%"} y={"33%"} lapse={rand1} to="/about">About Us</Portal> */}
+            <Portal onClick={aboutToggle} show={showAbout} x={"44%"} y={"33%"} lapse={rand1} to="/about">About Us</Portal>
     {/* CONTACT */}
                 {/* <Connection x={"calc(39% + 4px)"} y={"calc(84% + 4px)"} width={"84px"} transform={"rotate(16deg)"} />
                 <Node x={"calc(39%)"} y={"calc(84% - 14px)"}/>
             <Portal onClick={contactToggle} show={showContact} x={"43%"} y={"84%"} lapse={rand2} to="/contact">Contact</Portal> */}
     {/* MANIFESTO */}
-                {/* <Connection x={"calc(55% + 27px)"} y={"calc(62%)"} width={"3%"} transform={"rotate(80deg)"} style={{transformOrigin: "top left"}} />
+                <Connection x={"calc(55% + 27px)"} y={"calc(62%)"} width={"3%"} transform={"rotate(80deg)"} style={{transformOrigin: "top left"}} />
                 <Node x={"calc(55% + 20px)"} y={"calc(62%)"}/>
-            <Portal onClick={manifestoToggle} show={showManifesto} x={"55%"} y={"66%"} lapse={rand3} to="/manifesto">Manifesto</Portal> */}
+            <Portal onClick={manifestoToggle} show={showManifesto} x={"55%"} y={"66%"} lapse={rand3} to="/manifesto">Manifesto</Portal>
     {/* SPACE */}
                 {/* <Connection x={"calc(63% - 36px)"} y={"calc(22% + 38px)"} width={"50px"} transform={"rotate(-30deg)"} />
                 <Node x={"calc(63% - 36px)"} y={"calc(22% + 40px)"}/>
             <Portal onClick={spaceToggle} show={showSpace} x={"63%"} y={"22%"} lapse={rand4} to="/space">Our Space</Portal> */}
     {/* EVENTS */}
-                {/* <Connection x={"calc(38% + 65px)"} y={"calc(12% + 1.1vw)"} width={"calc(5.5%)"} transform={"rotate(22.6deg)"} style={{transformOrigin: "bottom left"}} />
+                <Connection x={"calc(38% + 65px)"} y={"calc(12% + 1.1vw)"} width={"calc(5.5%)"} transform={"rotate(22.6deg)"} style={{transformOrigin: "bottom left"}} />
                 <Node x={"calc(38% + 65px + 5vw)"} y={"calc(12% + 3vw)"}/>
-            <Portal onClick={eventsToggle} show={showEvents} x={"38%"} y={"12%"} lapse={rand5} to="/events">Events</Portal> */}
+            <Portal onClick={eventsToggle} show={showEvents} x={"38%"} y={"12%"} lapse={rand5} to="/events">Events</Portal>
     {/* ARCHIVE */}
                 {/* <Connection x={"calc(29% + 136px)"} y={"calc(58% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
                 <Node x={"calc(29% + 136px + 2.5vw)"} y={"calc(58% + 3vw)"}/>
             <Portal onClick={archiveToggle} show={showArchive} x={"29%"} y={"58%"} lapse={rand6} to="/archive">Online Archive</Portal> */}
-    {/* ARCHIVE */}
-                {/* <Connection x={"calc(29% + 136px)"} y={"calc(58% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
+    {/* Current */}
+                <Connection x={"calc(29% + 136px)"} y={"calc(58% + 1.1vw)"} width={"3.9%"} transform={"rotate(37deg)"} style={{transformOrigin: "bottom left"}} />
                     <Node x={"calc(29% + 136px + 2.5vw)"} y={"calc(58% + 3vw)"}/>
-                <Portal onClick={currentToggle} show={showCurrent} x={"32%"} y={"57.5%"} lapse={rand6} to="/current">Current</Portal> */}
+                <Portal onClick={currentToggle} show={showCurrent} x={"32%"} y={"57.5%"} lapse={rand6} to="/current">Current</Portal>
+    {/* RADIO */}
+                <Connection x={"calc(63% - 36px)"} y={"calc(22% + 38px)"} width={"50px"} transform={"rotate(-30deg)"} />
+                <Node x={"calc(63% - 36px)"} y={"calc(22% + 40px)"}/>
+            <Portal onClick={spaceToggle} show={showSpace} x={"63%"} y={"22%"} lapse={rand4} to="/radio">Radio</Portal>
             {/* <Mission lapse={randName}>
                 <p>...lives in the space between a Library and a Gallery.</p>
                 <br />

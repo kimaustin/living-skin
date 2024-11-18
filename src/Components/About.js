@@ -9,12 +9,14 @@ const About = ({ closePortals }) => {
     return (
         <>
             <Container>
-                    We are called to set in motion a disturbance in art and experiential learning.
-                    Dark clouds have come and gone, but life has surely done its best to go on. 
-                <p style={{ fontSize: "22px" }}>
-                    As discoverers learners and expressers, we ought to position ourselves as partners with knowledge and art, not owners or collectors of it, respecting their spirit. Art and knowledge simply pass through us—we can only but experience our spirit and reactions to their movements.
-                </p>
-                <LinkRouter to="/manifesto" >More in our manifesto...</LinkRouter>
+                <img style={{width: "20%", marginTop: "10%"}} src={"imgs/logo.png"}/>
+                <h1>Living Skin is a hybrid gallery-project space.</h1>
+                <p>61 Wyckoff Ave</p>
+                   <p> We are called to set in motion a disturbance in art and experiential learning. </p>
+                   <LinkRouter to="/manifesto" >More in our manifesto...</LinkRouter>
+                    <p>
+                         <a href="https://instagram.com/living___skin">Instagram</a>
+                    </p>
             </Container>
             <Close closePortals={closePortals} />
             <Reset closePortals={closePortals} />
